@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kong-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: kongam
+    http:
+      paths:
+      - path: /proxy
+        backend:
+          serviceName: kong-proxy
+          servicePort: 8000
+      - path: /admin
+        backend:
+          serviceName: kong-admin
+          servicePort: 8001          
+      - path: /proxyssl
+        backend:
+          serviceName: kong-proxy-ssl
+          servicePort: 8443
+      - path: /adminssl
+        backend:
+          serviceName: kong-admin-ssl
+          servicePort: 8444
