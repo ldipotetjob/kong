@@ -1,18 +1,18 @@
-In this scenario we're going to install a REST api in KONG api management.
+# Installing Api on Kong
 
-Restful Api in scala language using playframework
-Documented with Swagger Framework 
+In this scenario we're going to install a REST api in KONG api management. Our Restful Api is built in scala language 
+using playframework and documented with Swagger Framework.  
 
-Just needed route file to get an idea about about routes in our app
-We're gonna create services to access to documentation 
+Just needed playframework oute file to get an idea about about routes in our app
+We're gonna create services to access to documentation. 
   
 
-Scenario:
+### Scenario:
 
 * ApiRest in PlayFramework 
 * Swagger
 
-Get the proper installation on bare metal:
+Get the proper installation on bare metal:</br>
 https://konghq.com/install/
 
 Running in bare metal:</br>
