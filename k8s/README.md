@@ -19,12 +19,12 @@ cassandra.yaml:</br>
 
 #### Steps for running Kong with cassandra ###
 
-1. Create cassandra resources(cassandra headless services/cassandra db)
-2. Prepare cassandra (https://cassandra.apache.org/doc/latest/operating/security.html#authentication)
-3. Excecute migration. Its mean create migration job ()
-4. 
+1. Create cassandra resources([cassandra headless services](https://github.com/ldipotetjob/kong/blob/master/k8s/cassandra_service.yaml)/[cassandra db](https://github.com/ldipotetjob/kong/blob/master/k8s/cassandra_statefulset_minikube.yaml))
+2. Prepare cassandra. You can find script below. ref. https://cassandra.apache.org/doc/latest/operating/security.html#authentication
+3. Create migration [job resource](https://github.com/ldipotetjob/kong/blob/master/k8s/kong_migration_cassandra.yaml)
+4. Create [kong resources](https://github.com/ldipotetjob/kong/blob/master/k8s/kong_all_in_one_aws.yaml).
 
-ref Prepare Cassandra(https://cassandra.apache.org/doc/latest/operating/security.html#authentication) 
+ref. Prepare Cassandra(https://cassandra.apache.org/doc/latest/operating/security.html#authentication) 
 
 ```shell
 cqlsh -u cassandra -p cassandra
@@ -35,8 +35,6 @@ CREATE ROLE dba WITH SUPERUSER = true AND LOGIN = true AND PASSWORD = 'super';
 
 ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;
 ```
-
-
 
 
 **Some pending task:**</br> 
