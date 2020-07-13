@@ -44,5 +44,4 @@ ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;
  Kong ingress ingress controller: 0.5.0 => upper versions 
 
 ref.
-[Ingress Controller On EKS ] https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/deployment/eks.md
-[Ingress Controller On Minikube] 
+[Ingress Controller On EKS](https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/deployment/eks.md)
