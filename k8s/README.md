@@ -36,7 +36,14 @@ CREATE ROLE dba WITH SUPERUSER = true AND LOGIN = true AND PASSWORD = 'super';
 
 ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;
 ```
+### Checking if kong is working 
 
+1. Because for test purpose Admin Service is type NodePort. Not Ingress services is needed:</br>
+```shell
+curl -l $(minikube service -n kong kong-ingress-controller --url)
+```
+2. Other option is Admin Service as type ClusterIP. 
+ 2.1 To drive this implementation you need to add/modifica a ClusterIP admin service and create Ingress service.  
 
 **Some pending task:**</br> 
  With the current rbac: </br>
