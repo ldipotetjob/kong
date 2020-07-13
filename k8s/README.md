@@ -6,6 +6,39 @@ because in those implementations, everything related to the administration API i
 *I have appreciated that access to api admin at last ingress controller's versions are very tricky.*  
 They have change the point of view in relationship between Kong-Cassandra so now they are promoting dbless design and a marriadge with some db rds implementation.
 
+### Running dbless:
+
+### Running with Cassandra 
+Note: Cassandra 3.11</br> 
+cassandra.yaml:</br>
+
+**Authentication** 
+* PasswordAuthenticator
+* usr: cassandra 
+* password: cassandra      
+
+#### Steps for running Kong with cassandra ###
+
+1. Create cassandra resources(cassandra headless services/cassandra db)
+2. Prepare cassandra (https://cassandra.apache.org/doc/latest/operating/security.html#authentication)
+3. Excecute migration. Its mean create migration job ()
+4. 
+
+ref Prepare Cassandra(https://cassandra.apache.org/doc/latest/operating/security.html#authentication) 
+
+```shell
+cqlsh -u cassandra -p cassandra
+ALTER KEYSPACE system_auth WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': 2};
+
+# create a new superuser
+CREATE ROLE dba WITH SUPERUSER = true AND LOGIN = true AND PASSWORD = 'super';
+
+ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;
+```
+
+
+
+
 **Some pending task:**</br> 
  With the current rbac: </br>
  Kong:1.5.0 => upper versions 
