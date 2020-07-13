@@ -9,8 +9,9 @@ They have change the point of view in relationship between Kong-Cassandra so now
 ### Running dbless:
 
 ### Running with Cassandra 
-Note: Cassandra 3.11</br> 
-cassandra.yaml:</br>
+Note: Cassandra 3.11
+
+cassandra.yaml:
 
 **Authentication** 
 * PasswordAuthenticator
