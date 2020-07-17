@@ -45,6 +45,10 @@ curl -l $(minikube service -n kong kong-ingress-controller --url)
 2. Other option is Admin Service as type ClusterIP. 
  2.1 To drive this implementation you need to add/modifica a ClusterIP admin service and create Ingress service.  
 
+3. Access to api is via proxy port
+```shell
+curl -l $(minikube service -n kong kong-proxy --url)
+```
 **Some pending task:**</br> 
  With the current rbac: </br>
  Kong:1.5.0 => upper versions 
