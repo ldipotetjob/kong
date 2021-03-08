@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: kong-ingress-1
+  namespace: kong
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "kong"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /admin
+        backend:
+          serviceName: kong-ingress-controller
+          servicePort: 443
+      - path: /proxy
+        backend:
+          serviceName: kong-proxy
+          servicePort: 443

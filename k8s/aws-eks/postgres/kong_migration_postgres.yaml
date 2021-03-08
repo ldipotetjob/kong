@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kong-migration
+  namespace: kong
+spec:
+  template:
+    metadata:
+      name: kong-migration
+    spec:
+      containers:
+      - name: kong-migration
+        image: kong:1.5.0
+        env:
+          - name: KONG_NGINX_DAEMON
+            value: 'off'
+          - name: KONG_DATABASE
+            value: postgres
+          - name: KONG_PG_HOST
+            value: postgres.default.svc.cluster.local
+          - name: KONG_PG_DATABASE
+            value: kong
+          - name: KONG_PG_USER
+            value: kong
+          - name: KONG_PG_PASSWORD
+            value: kong
+        command: [ "/bin/sh", "-c", "kong migrations --v bootstrap" ]
+      restartPolicy: Never
