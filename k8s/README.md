@@ -8,7 +8,7 @@ They have change the point of view in relationship between Kong-Cassandra so now
 
 ### Running dbless:
 
-### Running with Cassandra 
+### Running with Cassandra: 
 Note: Cassandra 3.11
 
 cassandra.yaml:
