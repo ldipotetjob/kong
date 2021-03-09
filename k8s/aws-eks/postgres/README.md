@@ -33,8 +33,7 @@ note: postgres user with admin grant
   5. Deploy ingress
       . kubectl create -f kong_ingress.yaml
 
- ref: 
- 
+ ref: </br>
  AWS RDS: &nbsp;https://docs.aws.amazon.com/rds/index.html </br>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/</br>
  POSTGRES: &nbsp;https://www.postgresql.org/docs/current/  
