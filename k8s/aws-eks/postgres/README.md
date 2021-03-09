@@ -35,5 +35,6 @@ note: postgres user with admin grant
 
  ref: 
  
- AWS RDS:
- POSTGRES:  
+ AWS RDS: &nbsp;https://docs.aws.amazon.com/rds/index.html </br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/</br>
+ POSTGRES: &nbsp;https://www.postgresql.org/docs/current/  
